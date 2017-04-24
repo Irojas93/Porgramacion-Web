@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaTurno.aspx.cs" Inherits="Presentacion.AltaTurno" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ModificarTurno.aspx.cs" Inherits="Presentacion.ModificarTurno" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <br />
     <div class="container" id="container">
         <div class="panel panel-primary">
@@ -14,7 +13,6 @@
                     <asp:Label ID="lblFechaturno" class="col-md-2 control-label" runat="server" Text="Fecha del Turno: "></asp:Label>
                     <div class="col-md-4">
                         <div id="datetimepicker" class="input-append date">
-
                             <input type="text" id="txtFechaTurno" runat="server"> </input>
                             <span class="add-on">
                                 <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
@@ -45,27 +43,8 @@
             </div>
         </div>
         <div class="col-md-4">
-            <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+            <asp:Button ID="btnModificar" CssClass="btn btn-success" runat="server" Text="Modificar"  />
         </div>
-    </div>
-    <div class="container">
-        <asp:GridView ID="gdvTurnos" runat="server" CssClass="table table-hover" AutoGenerateColumns="false" OnRowCommand="gdvTurnos_RowCommand">
-
-            <Columns>
-                <asp:BoundField HeaderText="Nombre " DataField="clienteNombre" />
-                <asp:BoundField HeaderText="Apellido " DataField="clienteApellido" />
-                <asp:BoundField HeaderText="Direccion " DataField="clienteDireccion" />
-                <asp:BoundField HeaderText="Telefono " DataField="clienteTelefono" />
-                <asp:BoundField HeaderText="Fecha Turno " DataField="turnoFecha" />
-                <asp:BoundField HeaderText="Motivo " DataField="turnoMotivo" />
-                <asp:BoundField HeaderText="Descripcion " DataField="turnoDescripcion" />
-                <asp:TemplateField>
-                    <ItemTemplate>
-                        <asp:ImageButton runat="server" ImageUrl="~/img/edit.png" CommandName="btnEditar" CommandArgument='<%#Eval("turnoId") %>' />
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-        </asp:GridView>
     </div>
     <script type="text/javascript" src="js/jquery.min.js"> </script>
     <script type="text/javascript" src="js/bootstrap.min.js"> </script>

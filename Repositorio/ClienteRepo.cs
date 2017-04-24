@@ -69,7 +69,7 @@ namespace Repositorio
             conexion.ConnectionString = datosConexion;
             conexion.Open();
 
-            string query = "update  Clientes set('" + clienteDom.Nombre + "','" + clienteDom.Apellido + "','" + clienteDom.Direccion + "','" + clienteDom.Telefono + "')";
+            string query = "UPDATE Clientes SET clienteNombre ='"+ clienteDom.Nombre +"',clienteApellido ='" + clienteDom.Apellido + "',clienteDireccion = '" + clienteDom.Direccion + "',clienteTelefono= '" + clienteDom.Telefono + "' where clienteId = "+ clienteId;
             SqlCommand cmd = new SqlCommand(query, conexion);
             cmd.ExecuteNonQuery();
 

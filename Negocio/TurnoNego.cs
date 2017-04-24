@@ -19,6 +19,11 @@ namespace Negocio
             turnoRepo.GuardarCliente(turnoDom);
         }
 
+        public DataTable RecuperarTurno(int turnoId)
+        {
+            return turnoRepo.RecuperarTurno(turnoId);
+        }
+
         public DataTable ListaTurnos()
         {
             return turnoRepo.listTurnos();

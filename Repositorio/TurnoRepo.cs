@@ -23,11 +23,29 @@ namespace Repositorio
             conexion.ConnectionString = datosConexion;
             conexion.Open();
 
-            string query = "insert into Turnos values('" + turnoDom.TurnoFechaDeRegistro + "','" + turnoDom.TurnoFecha + "','" + turnoDom.Motivo + "','" + turnoDom.Descripcion + "','"+turnoDom.ClienteId+"')";
+            string query = "insert into Turnos values('" + turnoDom.TurnoFechaDeRegistro + "','" + turnoDom.TurnoFecha + "','" + turnoDom.Motivo + "','" + turnoDom.Descripcion + "','" + turnoDom.ClienteId + "')";
             SqlCommand cmd = new SqlCommand(query, conexion);
             cmd.ExecuteNonQuery();
 
             conexion.Close();
+        }
+
+        public DataTable RecuperarTurno(int turnoId)
+        {
+            DataTable dt = new DataTable();
+
+            conexion.ConnectionString = datosConexion;
+
+            conexion.Open();
+
+            string query = "select * from Turnos join Clientes on Clientes.clienteId = Turnos.clienteId where Turnos.turnoId = "+ turnoId;
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            conexion.Close();
+
+            return dt;
         }
 
         public DataTable listTurnos()

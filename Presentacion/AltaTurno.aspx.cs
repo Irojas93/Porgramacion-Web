@@ -57,6 +57,14 @@ namespace Presentacion
             GuardarTurno();
         }
 
-
+        protected void gdvTurnos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "btnEditar")
+            {
+                int turnoId = int.Parse(e.CommandArgument.ToString());
+                String pagina = "ModificarTurno.aspx?turnoId=" + turnoId;
+                Response.Redirect(pagina);
+            }
+        }
     }
 }

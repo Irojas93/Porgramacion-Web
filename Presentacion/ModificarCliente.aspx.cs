@@ -42,6 +42,7 @@ namespace Presentacion
             clienteDom.Direccion = txtCleinteDireccion.Text;
             clienteDom.Telefono = txtClienteTelefono.Text;
 
+            clienteNego.Modificar(int.Parse(hdfClienteId.Value),clienteDom);
 
         }
         protected void btnModificar_Click(object sender, EventArgs e)

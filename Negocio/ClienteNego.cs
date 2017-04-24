@@ -21,7 +21,7 @@ namespace Negocio
 
         public void Modificar(int clienteId, ClienteDom clienteDom)
         {
-
+            clienteRepo.Modificar(clienteId,clienteDom);
         }
 
         public DataTable ListaClientes()
