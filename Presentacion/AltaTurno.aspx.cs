@@ -27,8 +27,11 @@ namespace Presentacion
 
         private void CargarCombos()
         {
-            ddlCliente.DataSource = clienteNego.ListaClientes();
+            ddlCliente.DataSource = clienteNego.LlenarCombo();
+            ddlCliente.DataTextField = "datos";
+            ddlCliente.DataValueField = "clienteId";
             ddlCliente.DataBind();
+            ddlCliente.Items.Insert(0,"Seleccione un cliente");
         }
 
         private void CargarGrilla()

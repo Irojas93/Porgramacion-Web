@@ -14,7 +14,8 @@ namespace Presentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           int clienteId = int.Parse(Request["clienteId"].ToString());
+            if (IsPostBack) return;
+            int clienteId = int.Parse(Request["clienteId"].ToString());
             LlenarCampos(clienteId);
         }
 
@@ -37,13 +38,15 @@ namespace Presentacion
         {
             ClienteNego clienteNego = new ClienteNego();
             ClienteDom clienteDom = new ClienteDom();
+
             clienteDom.Nombre = txtClienteNombre.Text;
             clienteDom.Apellido = txtClienteApellido.Text;
             clienteDom.Direccion = txtCleinteDireccion.Text;
             clienteDom.Telefono = txtClienteTelefono.Text;
-
             clienteNego.Modificar(int.Parse(hdfClienteId.Value),clienteDom);
 
+            String pagina = "ClienteAlta.aspx";
+            Response.Redirect(pagina);
         }
         protected void btnModificar_Click(object sender, EventArgs e)
         {

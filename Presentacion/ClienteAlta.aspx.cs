@@ -28,7 +28,6 @@ namespace Presentacion
 
         public void GuardarCliente()
         {
-            //ClienteNego clienteNego = new ClienteNego();
             ClienteDom clienteDom = new ClienteDom();
 
             clienteDom.Nombre = txtClienteNombre.Text;
@@ -39,7 +38,6 @@ namespace Presentacion
             clienteNego.GuardarCliente(clienteDom);
 
             LimpiaControles();
-
             CargarGrilla();
         }
 
@@ -49,7 +47,6 @@ namespace Presentacion
             txtClienteApellido.Text = String.Empty;
             txtCleinteDireccion.Text = String.Empty;
             txtClienteTelefono.Text = String.Empty;
-
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)

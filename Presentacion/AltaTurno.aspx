@@ -15,7 +15,7 @@
                     <div class="col-md-4">
                         <div id="datetimepicker" class="input-append date">
 
-                            <input type="text" id="txtFechaTurno" runat="server"> </input>
+                            <input type="text" id="txtFechaTurno" runat="server" /> 
                             <span class="add-on">
                                 <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
                             </span>

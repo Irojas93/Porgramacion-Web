@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+ <asp:HiddenField ID="hdfTurnoId" runat="server" />
     <br />
     <div class="container" id="container">
         <div class="panel panel-primary">
@@ -13,7 +14,7 @@
                     <asp:Label ID="lblFechaturno" class="col-md-2 control-label" runat="server" Text="Fecha del Turno: "></asp:Label>
                     <div class="col-md-4">
                         <div id="datetimepicker" class="input-append date">
-                            <input type="text" id="txtFechaTurno" runat="server"> </input>
+                            <input type="text" id="txtFechaTurno" runat="server" />
                             <span class="add-on">
                                 <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
                             </span>
@@ -26,24 +27,18 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
+            <asp:Label ID="lblDescripcion" class="col-md-2 control-label" runat="server" Text="Descripcion Turno: "></asp:Label>
 
-                <asp:Label ID="lblDescripcion" class="col-md-2 control-label" runat="server" Text="Descripcion Turno: "></asp:Label>
-
-                <div class="col-md-4">
-                    <asp:TextBox ID="txtDescripcionTurno" runat="server"></asp:TextBox>
-                </div>
-
-                <asp:Label ID="lblCliente" class="col-md-2 control-label" runat="server" Text="Seleccione Cliente: "></asp:Label>
-
-                <div class="col-md-4">
-                </div>
-                <asp:DropDownList ID="ddlCliente" runat="server" DataTextField="clienteNombre" DataValueField="clienteId">
-                </asp:DropDownList>
+            <div class="col-md-4">
+                <asp:TextBox ID="txtDescripcionTurno" runat="server"></asp:TextBox>
             </div>
+
+            <asp:Label ID="lblCliente" class="col-md-2 control-label" runat="server" Text="Seleccione Cliente: "></asp:Label>
+            <asp:DropDownList ID="ddlCliente" runat="server" DataTextField="clienteNombre" DataValueField="clienteId">
+            </asp:DropDownList>
         </div>
         <div class="col-md-4">
-            <asp:Button ID="btnModificar" CssClass="btn btn-success" runat="server" Text="Modificar"  />
+            <asp:Button ID="btnModificar" CssClass="btn btn-success" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
         </div>
     </div>
     <script type="text/javascript" src="js/jquery.min.js"> </script>

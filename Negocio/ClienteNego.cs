@@ -14,25 +14,30 @@ namespace Negocio
 
         ClienteRepo clienteRepo = new ClienteRepo();
         public void GuardarCliente(ClienteDom clienteDom)
-        {    
-                    
+        {
+
             clienteRepo.GuardarCliente(clienteDom);
         }
 
         public void Modificar(int clienteId, ClienteDom clienteDom)
         {
-            clienteRepo.Modificar(clienteId,clienteDom);
+            clienteRepo.Modificar(clienteId, clienteDom);
+        }
+
+        public DataTable LlenarCombo()
+        {
+            return clienteRepo.LlenarCombo();
         }
 
         public DataTable ListaClientes()
         {
-            
+
             return clienteRepo.ListCliente();
         }
 
         public DataTable LlenarGrilla(int clienteId)
         {
-            
+
             return clienteRepo.LlenarCampos(clienteId);
         }
     }

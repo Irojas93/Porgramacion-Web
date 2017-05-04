@@ -19,10 +19,8 @@
                     <div class="col-md-4">
                         <asp:TextBox ID="txtClienteApellido" runat="server"></asp:TextBox>
                     </div>
-
                 </div>
-            </div>
-            <div class="form-group">
+
                 <asp:Label ID="lblClienteDireccion" class="col-md-2 control-label" runat="server" Text="Dirección Cliente: "></asp:Label>
 
                 <div class="col-md-4">
@@ -35,28 +33,27 @@
                     <asp:TextBox ID="txtClienteTelefono" runat="server"></asp:TextBox>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-2">
-                    <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
-                </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <asp:Button ID="btnGuardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
             </div>
+        </div>
         </div>
     </div>
     <br />
     <div class="container">
-        <asp:GridView ID="gdvClientes" runat="server" CssClass="table table-hover" AutoGenerateColumns="false" OnRowCommand="gdvClientes_RowCommand" >
+        <asp:GridView ID="gdvClientes" runat="server" CssClass="table table-hover" AutoGenerateColumns="false" OnRowCommand="gdvClientes_RowCommand">
             <Columns>
                 <asp:BoundField HeaderText="Nombre " DataField="clienteNombre" />
                 <asp:BoundField HeaderText="Apellido " DataField="clienteApellido" />
                 <asp:BoundField HeaderText="Direccion " DataField="clienteDireccion" />
                 <asp:BoundField HeaderText="Telefono " DataField="clienteTelefono" />
                 <asp:TemplateField>
-                   <ItemTemplate>
-                       <asp:ImageButton runat="server" ImageUrl="~/img/edit.png" CommandName="btnEditar" CommandArgument='<%#Eval("clienteId") %>'  />
-                   </ItemTemplate> 
-                </asp:TemplateField>  
+                    <ItemTemplate>
+                        <asp:ImageButton runat="server" ImageUrl="~/img/edit.png" CommandName="btnEditar" CommandArgument='<%#Eval("clienteId") %>' />
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
-
         </asp:GridView>
     </div>
 </asp:Content>

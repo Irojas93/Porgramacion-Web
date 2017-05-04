@@ -47,6 +47,24 @@ namespace Repositorio
             return dt;
         }
 
+        public DataTable LlenarCombo()
+        {
+            DataTable dt = new DataTable();
+
+            conexion.ConnectionString = datosConexion;
+
+            conexion.Open();
+
+            string query = "select clienteId ,clienteNombre+ ' ' + clienteApellido as datos  from Clientes ";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            conexion.Close();
+
+            return dt;
+        }
+
         public DataTable LlenarCampos(int clienteId)
         {
             DataTable dt = new DataTable();

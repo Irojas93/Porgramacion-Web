@@ -49,6 +49,20 @@ namespace Repositorio
             return dt;
         }
 
+        public void ModificarTurno(int turnoId,TurnoDom turnoDom)
+        {
+
+            conexion.ConnectionString = datosConexion;
+            conexion.Open();
+
+            string query = "UPDATE Turnos SET turnoFecha ='" + turnoDom.TurnoFecha + "',turnoMotivo ='" + turnoDom.Motivo + "',turnoDescripcion = '" + turnoDom.Descripcion + "',clienteId= '" + turnoDom.ClienteId + "' where turnoId = " + turnoId;
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            cmd.ExecuteNonQuery();
+
+            conexion.Close();
+
+        }
+
         public DataTable listTurnos()
         {
             DataTable dt = new DataTable();
